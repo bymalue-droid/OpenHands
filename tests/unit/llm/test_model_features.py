@@ -158,6 +158,24 @@ def test_model_matches_provider_qualified(name, pattern, expected):
                 supports_stop_words=True,
             ),
         ),  # provider-qualified still matches basename patterns
+        (
+            'deepseek-ai/DeepSeek-V3-0324',
+            ModelFeatures(
+                supports_function_calling=True,
+                supports_reasoning_effort=False,
+                supports_prompt_cache=False,
+                supports_stop_words=True,
+            ),
+        ),
+        (
+            'deepseek-chat',
+            ModelFeatures(
+                supports_function_calling=True,
+                supports_reasoning_effort=False,
+                supports_prompt_cache=False,
+                supports_stop_words=True,
+            ),
+        ),
     ],
 )
 def test_get_features(model, expect):
@@ -193,6 +211,11 @@ def test_get_features(model, expect):
         'kimi-k2-instruct',
         'qwen3-coder',
         'qwen3-coder-480b-a35b-instruct',
+        # DeepSeek
+        'deepseek-chat',
+        'deepseek-v3',
+        'deepseek-v3-0324',
+        'deepseek-ai/DeepSeek-V3-0324',
     ],
 )
 def test_function_calling_models(model):

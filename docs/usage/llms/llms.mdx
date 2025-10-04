@@ -22,6 +22,7 @@ Based on these findings and community feedback, these are the latest models that
 - [openai/gpt-5-2025-08-07](https://openai.com/api/) (recommended)
 - [gemini/gemini-2.5-pro](https://blog.google/technology/google-deepmind/gemini-model-thinking-updates-march-2025/)
 - [deepseek/deepseek-chat](https://api-docs.deepseek.com/)
+- [deepseek/deepseek-v3](https://api-docs.deepseek.com/) (also supports function calling via custom API providers like Featherless)
 - [moonshot/kimi-k2-0711-preview](https://platform.moonshot.ai/docs/pricing/chat#generation-model-kimi-k2)
 
 If you have successfully run OpenHands with specific providers, we encourage you to open a PR to share your setup process
@@ -60,6 +61,15 @@ The following can be set in the OpenHands UI through the Settings:
 - `LLM Model`
 - `API Key`
 - `Base URL` (through `Advanced` settings)
+
+<Note>
+**Using Custom API Providers**: You can use custom API providers like Featherless, Together AI, or other OpenAI-compatible endpoints by setting:
+- Model: The model identifier (e.g., `deepseek-ai/DeepSeek-V3-0324`)
+- Base URL: The provider's API endpoint (e.g., `https://api.featherless.ai/v1`)
+- API Key: Your API key from the provider
+
+This allows you to access models through alternative providers that may offer better pricing or availability.
+</Note>
 
 There are some settings that may be necessary for some LLMs/providers that cannot be set through the UI. Instead, these
 can be set through environment variables passed to the docker run command when starting the app
